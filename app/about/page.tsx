@@ -11,21 +11,21 @@ export const metadata: Metadata = {
 };
 
 // Photo order per spec:
-// 1. Coffee/latte art — top wide (IMG_6238)
-// 2. Headshot — bottom-left (MimsPortraits)
-// 3. Sunset silhouette — bottom-right (IMG_8261)
+// 1. Headshot — top wide (MimsPortraits)
+// 2. Sunset silhouette — bottom-left (IMG_8261)
+// 3. Coffee latte art — bottom-right (IMG_6238)
 const photos = {
   wide: {
-    src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/684c9c19f188a2ab8eb25744_IMG_6238.jpg",
-    alt: "Latte art coffee cup",
-  },
-  bottomLeft: {
     src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/684c9d5e1a94a4a6eb189524_20240819_MimsPortraits_bhs_037.jpg",
     alt: "Ann Yu headshot",
   },
-  bottomRight: {
+  bottomLeft: {
     src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/69965da39214cbcaddc9ad8f_IMG_8261.jpg",
     alt: "Sunset silhouette",
+  },
+  bottomRight: {
+    src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/684c9c19f188a2ab8eb25744_IMG_6238.jpg",
+    alt: "Latte art coffee cup",
   },
 };
 
@@ -45,7 +45,7 @@ export default function About() {
         <FadeIn>
           {/* Desktop grid */}
           <div className="hidden lg:grid grid-cols-2 gap-3">
-            {/* Top wide photo */}
+            {/* Top wide photo — headshot */}
             <div className="col-span-2 rounded-2xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
               <Image
                 src={photos.wide.src}
@@ -56,7 +56,7 @@ export default function About() {
                 unoptimized
               />
             </div>
-            {/* Bottom left — headshot */}
+            {/* Bottom left — sunset */}
             <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "1/1" }}>
               <Image
                 src={photos.bottomLeft.src}
@@ -67,7 +67,7 @@ export default function About() {
                 unoptimized
               />
             </div>
-            {/* Bottom right — sunset */}
+            {/* Bottom right — latte art */}
             <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "1/1" }}>
               <Image
                 src={photos.bottomRight.src}
@@ -129,7 +129,7 @@ export default function About() {
                 <div className="flex gap-5">
                   <span
                     className="label-tag flex-shrink-0 mt-1 tabular-nums"
-                    style={{ color: "var(--ink-faint)" }}
+                    style={{ color: "var(--text-tertiary)" }}
                   >
                     0{i + 1}
                   </span>
@@ -147,7 +147,11 @@ export default function About() {
                 href="https://drive.google.com/file/d/144g8Sq_8unk3SlGA7oA9Oe85miDbycqt/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 bg-ink text-bg px-7 py-3 rounded-full text-sm font-medium font-body hover:opacity-85 transition-opacity duration-200"
+                className="group inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-medium font-body hover:opacity-85 transition-opacity duration-200"
+                style={{
+                  backgroundColor: "var(--text-primary)",
+                  color: "var(--bg-primary)",
+                }}
               >
                 View Resume
                 <ArrowUpRight

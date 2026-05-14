@@ -230,14 +230,50 @@ export default function CoachAI() {
           </p>
         </FadeIn>
         <div className="space-y-4">
+          {/* Top 3 designs — full width */}
+          <FadeIn>
+            <div className="rounded-2xl overflow-hidden bg-bg-subtle">
+              <Image
+                src="https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/67b62de3c84d931a1ebd189f_CoachAItop3designs.png"
+                alt="Coach AI top 3 designs"
+                width={1200}
+                height={700}
+                className="w-full h-auto"
+                unoptimized
+              />
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Before vs. After — constrained phone mockups */}
+        <div className="flex flex-col items-center gap-8 mt-4">
           {[
-            { src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/67b62de3c84d931a1ebd189f_CoachAItop3designs.png", alt: "Coach AI top 3 designs" },
-            { src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/67b65b6398569280cc7d3942_Before%20vs.%20After%20Survey%20Flow.png", alt: "Before vs after survey flow" },
-            { src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/67b65cbb3e9e6eede1f625c8_Before%20vs.%20After%20Chatbot%20Flow.png", alt: "Before vs after chatbot flow" },
+            {
+              src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/67b65b6398569280cc7d3942_Before%20vs.%20After%20Survey%20Flow.png",
+              alt: "Before vs. After Survey Flow",
+            },
+            {
+              src: "https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/67b65cbb3e9e6eede1f625c8_Before%20vs.%20After%20Chatbot%20Flow.png",
+              alt: "Before vs. After Chatbot Flow",
+            },
           ].map(({ src, alt }) => (
             <FadeIn key={alt}>
-              <div className="rounded-2xl overflow-hidden bg-bg-subtle">
-                <Image src={src} alt={alt} width={1200} height={700} className="w-full h-auto" unoptimized />
+              <div
+                className="w-full overflow-hidden"
+                style={{
+                  maxWidth: 780,
+                  borderRadius: 16,
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.10)",
+                }}
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={780}
+                  height={500}
+                  className="w-full h-auto"
+                  unoptimized
+                />
               </div>
             </FadeIn>
           ))}

@@ -26,7 +26,10 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-bg/95 backdrop-blur-sm border-b border-border">
+    <header
+      className="sticky top-0 z-50 backdrop-blur-sm border-b border-border"
+      style={{ backgroundColor: "var(--navbar-bg)" }}
+    >
       <div className="container-portfolio">
         <div className="flex items-center justify-between h-16 md:h-[72px]">
           {/* Logo */}

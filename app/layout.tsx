@@ -3,10 +3,12 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["700", "800", "900"],
+  style: ["normal", "italic"],
   variable: "--font-playfair",
   display: "swap",
 });
@@ -38,10 +40,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="bg-bg text-ink font-body antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body className="font-body antialiased transition-colors duration-300">
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

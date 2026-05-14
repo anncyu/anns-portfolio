@@ -47,7 +47,7 @@ export default function HeroSection() {
       posRef.current.y = lerp(posRef.current.y, targetRef.current.y, 0.08);
 
       if (circle) {
-        circle.style.transform = `translate(${posRef.current.x - 350}px, ${posRef.current.y - 350}px)`;
+        circle.style.transform = `translate(${posRef.current.x - 500}px, ${posRef.current.y - 500}px)`;
       }
       rafRef.current = requestAnimationFrame(animate);
     };
@@ -66,22 +66,23 @@ export default function HeroSection() {
       ref={heroRef}
       className="relative overflow-hidden container-portfolio pt-20 md:pt-28 pb-24 md:pb-32"
     >
-      {/* Blur circle — desktop: mouse-tracked, mobile: static center */}
+      {/* Blur orb — desktop: mouse-tracked, mobile: static center */}
       <div
         ref={circleRef}
         aria-hidden
         className="pointer-events-none absolute rounded-full"
         style={{
-          width: 700,
-          height: 700,
-          background: "radial-gradient(circle, #c0d6f5 0%, transparent 70%)",
-          filter: "blur(80px)",
-          opacity: 0.55,
+          width: 1000,
+          height: 1000,
+          background: "radial-gradient(circle, var(--blur-orb) 0%, transparent 70%)",
+          filter: "blur(120px)",
+          opacity: 0.70,
+          mixBlendMode: "multiply",
           top: 0,
           left: 0,
           transform: isMobile
-            ? "translate(calc(50vw - 350px), -80px)"
-            : "translate(-350px, -350px)",
+            ? "translate(calc(50vw - 500px), -80px)"
+            : "translate(-500px, -500px)",
           willChange: "transform",
           transition: isMobile ? "none" : undefined,
         }}
@@ -93,11 +94,11 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display font-bold text-[clamp(2.3rem,6.5vw,5rem)] text-ink leading-[1.05] tracking-tight max-w-4xl mb-10"
+          className="font-display font-black text-[clamp(2.3rem,6.5vw,5rem)] text-ink leading-[1.05] tracking-tight max-w-4xl mb-10"
         >
           I&apos;m Ann, a former healthcare professional now applying{" "}
-          <em className="not-italic font-black">systems thinking</em> to{" "}
-          <em className="not-italic font-black">Product Management</em>, to
+          <em className="font-black italic">systems thinking</em> to{" "}
+          <em className="font-black italic">Product Management</em>, to
           empower and engage.
         </motion.h1>
 

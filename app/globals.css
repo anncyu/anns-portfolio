@@ -3,34 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --bg: #F9F8F6;
-  --bg-subtle: #F3F2F0;
-  --ink: #1A1A1A;
-  --ink-muted: #6B6767;
-  --ink-faint: #A8A5A2;
+  --bg-primary: #F9F8F6;
+  --bg-secondary: #F2F1EE;
+  --text-primary: #1A1A1A;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --border: #E8E6E2;
   --accent: #5271ff;
-  --accent-mid: rgba(82, 113, 255, 0.55);
-  --accent-light: rgba(82, 113, 255, 0.12);
-  --border: #E4E2DF;
+  --accent-mid: rgba(82,113,255,0.55);
+  --accent-light: rgba(82,113,255,0.12);
+  --blur-orb: #c0d6f5;
+  --surface: #FFFFFF;
+  --navbar-bg: rgba(249, 248, 246, 0.95);
+
+  /* legacy aliases — keep existing class references working */
+  --bg: var(--bg-primary);
+  --bg-subtle: var(--bg-secondary);
+  --ink: var(--text-primary);
+  --ink-muted: var(--text-secondary);
+  --ink-faint: var(--text-tertiary);
+}
+
+html.dark {
+  --bg-primary: #111110;
+  --bg-secondary: #1A1918;
+  --text-primary: #F0EDE8;
+  --text-secondary: #A09C96;
+  --text-tertiary: #6B6762;
+  --border: #2A2826;
+  --accent: #7B93FF;
+  --accent-mid: rgba(123,147,255,0.55);
+  --accent-light: rgba(123,147,255,0.14);
+  --blur-orb: #1e2d5c;
+  --surface: #1A1918;
+  --navbar-bg: rgba(26, 25, 24, 0.95);
 }
 
 html {
-  background-color: var(--bg);
-  color: var(--ink);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--ink);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
+  transition: background-color 300ms, color 300ms;
 }
 
 ::selection {
-  background: #5271ff;
+  background: var(--accent);
   color: #fff;
 }
 
@@ -48,7 +74,7 @@ video {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-subtle);
+  background: var(--bg-secondary);
 }
 ::-webkit-scrollbar-thumb {
   background: #d0cec9;
@@ -65,7 +91,7 @@ video {
   .label-tag {
     @apply text-[0.6875rem] uppercase tracking-[0.13em] font-semibold font-body;
   }
-  /* Blue accent pill */
+  /* Blue accent pill — auto-adjusts via CSS tokens */
   .pill {
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium font-body whitespace-nowrap;
     background: var(--accent-light);

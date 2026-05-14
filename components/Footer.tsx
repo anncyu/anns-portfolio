@@ -1,24 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { Moon } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function Footer() {
+  const { theme, toggleTheme } = useTheme();
+
   const workLinks = [
+    { label: "Omada Health", href: "/omada-health" },
     { label: "MD FactFarm", href: "/mdfactfarm" },
     { label: "CareerVillage Coach AI", href: "/coach-ai" },
-    { label: "CalCommunity", href: "#" },
-    { label: "SF Picnic Rentals", href: "#" },
   ];
 
   return (
-    <footer className="bg-bg border-t border-border mt-28">
+    <footer
+      className="border-t border-border mt-28"
+      style={{ backgroundColor: "var(--bg-secondary)" }}
+    >
       <div className="container-portfolio py-14 md:py-20">
         {/* Top grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 pb-12 border-b border-border">
           {/* Work */}
           <div>
-            <p className="label-tag text-ink-faint mb-5">Work</p>
+            <p className="label-tag mb-5" style={{ color: "var(--text-tertiary)" }}>
+              Work
+            </p>
             <ul className="space-y-3">
               {workLinks.map((link) => (
                 <li key={link.label}>
@@ -35,7 +42,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="label-tag text-ink-faint mb-5">Contact</p>
+            <p className="label-tag mb-5" style={{ color: "var(--text-tertiary)" }}>
+              Contact
+            </p>
             <ul className="space-y-3">
               <li>
                 <a
@@ -60,23 +69,26 @@ export default function Footer() {
 
           {/* Appearance */}
           <div>
-            <p className="label-tag text-ink-faint mb-5">Appearance</p>
+            <p className="label-tag mb-5" style={{ color: "var(--text-tertiary)" }}>
+              Appearance
+            </p>
             <button
-              className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-border text-ink-faint text-sm cursor-not-allowed select-none"
-              disabled
-              title="Dark mode coming soon!"
+              onClick={toggleTheme}
+              className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-border text-ink-muted text-sm hover:text-accent hover:border-accent transition-colors duration-200"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
-              <Moon size={13} />
-              <span className="font-body">Dark mode</span>
+              {theme === "dark" ? <Sun size={13} /> : <Moon size={13} />}
+              <span className="font-body">
+                {theme === "dark" ? "Light mode" : "Dark mode"}
+              </span>
             </button>
-            <p className="text-xs text-ink-faint mt-2">Coming soon!</p>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <p className="text-xs text-ink-faint">
-            © 2024 Ann Yu. All rights reserved.
+            © 2026 Ann Yu. All rights reserved.
           </p>
           <p className="text-xs text-ink-faint">
             Made with 🩶 and a lot of cappuccinos with almond milk.

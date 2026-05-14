@@ -6,16 +6,19 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
+        // bg kept as hardcoded hex so bg-bg/95 opacity modifier keeps working
         bg: "#F9F8F6",
-        "bg-subtle": "#F3F2F0",
-        ink: "#1A1A1A",
-        "ink-muted": "#6B6767",
-        "ink-faint": "#A8A5A2",
-        accent: "#5271ff",
-        border: "#E4E2DF",
+        // These reference CSS variables — auto-switch in dark mode
+        "bg-subtle": "var(--bg-secondary)",
+        ink: "var(--text-primary)",
+        "ink-muted": "var(--text-secondary)",
+        "ink-faint": "var(--text-tertiary)",
+        accent: "var(--accent)",
+        border: "var(--border)",
       },
       fontFamily: {
         display: ["var(--font-playfair)", "Georgia", "serif"],
