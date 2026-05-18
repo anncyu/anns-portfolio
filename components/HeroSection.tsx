@@ -94,12 +94,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display font-black text-[clamp(2.3rem,6.5vw,5rem)] text-ink leading-[1.05] tracking-tight max-w-4xl mb-10"
+          className="font-display font-semibold text-[clamp(2.3rem,6.5vw,5rem)] text-ink leading-[1.05] tracking-tight max-w-4xl mb-10"
         >
           I&apos;m Ann, a former healthcare professional now applying{" "}
           <em className="font-black italic">systems thinking</em> to{" "}
-          <em className="font-black italic">Product Management</em>, to
-          empower and engage.
+          <em className="font-black italic">Product Management</em>, to{" "}
+          <em className="font-black italic">empower and engage</em>.
         </motion.h1>
 
         <motion.div
