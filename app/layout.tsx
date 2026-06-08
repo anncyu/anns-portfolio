@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   },
   description:
     "Ann Yu is a former healthcare professional now applying systems thinking to Product Management, to empower and engage.",
+  icons: {
+    icon: "/logo-light.png",
+  },
   openGraph: {
     type: "website",
     siteName: "Ann Yu Portfolio",
