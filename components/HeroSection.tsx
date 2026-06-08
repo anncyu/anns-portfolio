@@ -64,20 +64,19 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative overflow-hidden container-portfolio pt-20 md:pt-28 pb-24 md:pb-32"
+      className="relative container-portfolio pt-20 md:pt-28 pb-24 md:pb-32"
     >
       {/* Blur orb — desktop: mouse-tracked, mobile: static center */}
       <div
         ref={circleRef}
         aria-hidden
-        className="pointer-events-none absolute rounded-full"
+        className="pointer-events-none absolute rounded-full mix-blend-multiply dark:mix-blend-normal"
         style={{
           width: 1000,
           height: 1000,
           background: "radial-gradient(circle, var(--blur-orb) 0%, transparent 70%)",
           filter: "blur(120px)",
           opacity: 0.70,
-          mixBlendMode: "multiply",
           top: 0,
           left: 0,
           transform: isMobile

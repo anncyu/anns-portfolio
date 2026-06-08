@@ -34,7 +34,7 @@ html.dark {
   --accent: #7B93FF;
   --accent-mid: rgba(123,147,255,0.55);
   --accent-light: rgba(123,147,255,0.14);
-  --blur-orb: #1e2d5c;
+  --blur-orb: rgba(59, 130, 246, 0.4);
   --surface: #1A1918;
   --navbar-bg: rgba(26, 25, 24, 0.95);
 }

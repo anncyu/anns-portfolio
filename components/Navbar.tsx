@@ -34,13 +34,21 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
+            {/* Light mode logo */}
             <Image
-              src="https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/6836376d31b6512d1e0d8d48_Adobe%20Express%20-%20file.png"
+              src="/logo-light.png"
               alt="Ann Yu"
               width={110}
               height={36}
-              className="h-8 w-auto object-contain"
-              unoptimized
+              className="h-8 w-auto object-contain dark:hidden"
+            />
+            {/* Dark mode logo */}
+            <Image
+              src="/logo-dark.png"
+              alt="Ann Yu"
+              width={110}
+              height={36}
+              className="h-8 w-auto object-contain hidden dark:block"
             />
           </Link>
 
