@@ -5,7 +5,7 @@ import FadeIn from "@/components/FadeIn";
 import HeroSection from "@/components/HeroSection";
 
 export const metadata: Metadata = {
-  title: "Ann Yu — Product Manager & Designer",
+  title: "Ann Yu",
   description:
     "Former healthcare professional applying systems thinking to Product Management. UC Berkeley grad student.",
 };
