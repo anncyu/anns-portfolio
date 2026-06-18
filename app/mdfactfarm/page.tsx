@@ -264,10 +264,10 @@ export default function MDFactFarm() {
       </div>
 
       <NextProject
-        icon="https://cdn.prod.website-files.com/6761f26ded0a1cfff8c53376/676f5747c1ac0acbdfc6ffb6_CareerVillageCharacter.png"
-        iconAlt="Coach AI icon"
-        label="Check out Coach AI Next!"
-        href="/coach-ai"
+        icon="/Scrolis-Logo.png"
+        iconAlt="Scrolis logo"
+        label="Check out Scrolis Next!"
+        href="/scrolis"
       />
     </>
   );

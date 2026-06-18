@@ -37,6 +37,15 @@ const projects = [
     isGif: false,
   },
   {
+    label: "Scrolis",
+    headline: "Replacing the Infinite Scroll with a Daily Digest Worth Finishing",
+    image: "/Background - Scrolis.png",
+    imageAlt: "Scrolis app cover",
+    tags: ["Product Management", "Capstone", "Mobile App"],
+    href: "/scrolis",
+    isGif: false,
+  },
+  {
     label: "Coach AI",
     headline: "Transforming Onboarding to Drive Career Success",
     image:
